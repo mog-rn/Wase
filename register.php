@@ -25,9 +25,15 @@
     
   </head>
   <body>
+  <!--Validate the input-->
+        <?php
+      if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+        # code...
+        require('process-register-page.php'); 
+      }
+        ?>
   
   <div class="site-wrap">
-
     <div class="site-mobile-menu">
       <div class="site-mobile-menu-header">
         <div class="site-mobile-menu-close mt-3">
@@ -109,8 +115,22 @@
 
             
 
-            <form action="#" class="p-5 bg-white">
+            <form action="register-page.php" class="p-5 bg-white" method="post" onsubmit="return checked();">
              
+             <div class="row form-group">
+                
+                <div class="col-md-12">
+                  <label class="text-black" for="first_name">Firrst Name</label> 
+                  <input type="text" id="first_name" class="form-control">
+                </div>
+              </div>
+              <div class="row form-group">
+                
+                <div class="col-md-12">
+                  <label class="text-black" for="last_name">Last Name</label> 
+                  <input type="text" id="last_name" class="form-control">
+                </div>
+              </div>
               <div class="row form-group">
                 
                 <div class="col-md-12">
@@ -135,7 +155,7 @@
 
               <div class="row form-group">
                 <div class="col-12">
-                  <p>Have an account? <a href="login.html">Log In</a></p>
+                  <p>Have an account? <a href="login.php">Log In</a></p>
                 </div>
               </div>
 
