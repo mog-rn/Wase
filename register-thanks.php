@@ -25,15 +25,9 @@
     
   </head>
   <body>
-  <!--Validate the input-->
-        <?php
-      if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-        # code...
-        require('process-register-page.php'); 
-      }
-        ?>
   
   <div class="site-wrap">
+
     <div class="site-mobile-menu">
       <div class="site-mobile-menu-header">
         <div class="site-mobile-menu-close mt-3">
@@ -49,7 +43,7 @@
         <div class="row align-items-center">
           
           <div class="col-6 col-xl-2">
-            <h1 class="mb-0 site-logo"><img src="images/wasify.png" alt="" style="float: left;" width="100px" height="100px"><a href="index.html" class="text-black mb-0">Classy<span class="text-primary">Ads</span>  </a></h1>
+            <h1 class="mb-0 site-logo"><img src="images/wasify.png" alt="" style="float: left;" width="100px" height="100px"><a href="index.html" class="text-black mb-0">WASIFY<span class="text-primary">Ads</span>  </a></h1>
           </div>
           <div class="col-12 col-md-10 d-none d-xl-block">
             <nav class="site-navigation position-relative text-right" role="navigation">
@@ -69,8 +63,8 @@
                 <li><a href="blog.html">Blog</a></li>
                 <li><a href="contact.html">Contact</a></li>
 
-                <li class="ml-xl-3 login"><a href="login.html"><span class="border-left pl-xl-4"></span>Log In</a></li>
-                <li class="active"><a href="register.html">Register</a></li>
+                <li class="ml-xl-3 login active"><a href="login.html"><span class="border-left pl-xl-4"></span>Log In</a></li>
+                <li><a href="register.html">Register</a></li>
 
                 <li><a href="#" class="cta"><span class="bg-primary text-white rounded">+ Post an Ad</span></a></li>
               </ul>
@@ -98,7 +92,7 @@
             
             <div class="row justify-content-center mt-5">
               <div class="col-md-8 text-center">
-                <h1>Register</h1>
+                <h1>Thank you for registering</h1>
               </div>
             </div>
 
@@ -112,61 +106,10 @@
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-md-7 mb-5"  data-aos="fade">
-
+        <p>On the Home Page you will now be able to login and add new quotes to the message board.</p>
             
 
-            <form action="register-page.php" class="p-5 bg-white" method="post" onsubmit="return checked();">
-             
-             <div class="row form-group">
-                
-                <div class="col-md-12">
-                  <label class="text-black" for="first_name">Firrst Name</label> 
-                  <input type="text" id="first_name" class="form-control">
-                </div>
-              </div>
-              <div class="row form-group">
-                
-                <div class="col-md-12">
-                  <label class="text-black" for="last_name">Last Name</label> 
-                  <input type="text" id="last_name" class="form-control">
-                </div>
-              </div>
-              <div class="row form-group">
-                
-                <div class="col-md-12">
-                  <label class="text-black" for="email">Email</label> 
-                  <input type="email" id="email" class="form-control">
-                </div>
-              </div>
-
-              <div class="row form-group">
-                <div class="col-md-12">
-                  <label class="text-black" for="subject">Password</label> 
-                  <input type="password" id="subject" class="form-control">
-                </div>
-              </div>
-
-              <div class="row form-group">
-                <div class="col-md-12">
-                  <label class="text-black" for="subject">Re-type Password</label> 
-                  <input type="password" id="subject" class="form-control">
-                </div>
-              </div>
-
-              <div class="row form-group">
-                <div class="col-12">
-                  <p>Have an account? <a href="login.php">Log In</a></p>
-                </div>
-              </div>
-
-              <div class="row form-group">
-                <div class="col-md-12">
-                  <input type="submit" value="Register" class="btn btn-primary py-2 px-4 text-white">
-                </div>
-              </div>
-
-  
-            </form>
+            
           </div>
           
         </div>
@@ -206,10 +149,10 @@
               <div class="col-md-3">
                 <h2 class="footer-heading mb-4">Navigations</h2>
                 <ul class="list-unstyled">
-                  <li><a href="about.html">About Us</a></li>
-                  <li><a href="about.html">Services</a></li>
-                  <li><a href="">Testimonials</a></li>
-                  <li><a href="contact.html">Contact Us</a></li>
+                  <li><a href="#">About Us</a></li>
+                  <li><a href="#">Services</a></li>
+                  <li><a href="#">Testimonials</a></li>
+                  <li><a href="#">Contact Us</a></li>
                 </ul>
               </div>
               <div class="col-md-4">
@@ -238,9 +181,8 @@
             <div class="border-top pt-5">
             <p>
             <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-            Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved 
-            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-            </p>
+            Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved                                                                                                       <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+               </p>
             </div>
           </div>
           
