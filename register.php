@@ -115,12 +115,12 @@
 
             
 
-            <form action="register-page.php" class="p-5 bg-white" method="post" onsubmit="return checked();">
+            <form action="" class="p-5 bg-white" method="post" onsubmit="return checked();">
              
              <div class="row form-group">
                 
                 <div class="col-md-12">
-                  <label class="text-black" for="first_name">Firrst Name</label> 
+                  <label class="text-black" for="first_name">First Name</label> 
                   <input type="text" id="first_name" class="form-control">
                 </div>
               </div>
