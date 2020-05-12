@@ -29,7 +29,7 @@
         <?php
       if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         # code...
-        require('process-register-page.php'); 
+        require('connect.php'); 
       }
         ?>
   
