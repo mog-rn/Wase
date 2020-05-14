@@ -4,9 +4,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   require("cap.php");//recaptcha check
 }
 ?>
-
-
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
