@@ -1,4 +1,12 @@
-<!DOCTYPE html>
+<?php                                                                                //#1
+session_start();
+if (!isset($_SESSION['user_level']) || ($_SESSION['user_level'] != 1))
+{
+    header("Location: login.php");
+    exit();
+}
+?>
+    <!DOCTYPE html>
 <html lang="en">
   <head>
     <title>WASIFYAds</title>
@@ -43,7 +51,7 @@
         <div class="row align-items-center">
           
           <div class="col-6 col-xl-2">
-            <h1 class="mb-0 site-logo"><img src="images/wasify.png" alt="" style="float: left;" width="100px" height="100px"><a href="index.html" class="text-black mb-0">wasify<span class="text-primary">Ads</span>  </a></h1>
+            <h1 class="mb-0 site-logo"><img src="images/wasify.png" alt="" style="float: left;" width="100px" height="100px"><a href="index.html" class="text-black mb-0">WASIFY<span class="text-primary">Ads</span>  </a></h1>
           </div>
           <div class="col-12 col-md-10 d-none d-xl-block">
             <nav class="site-navigation position-relative text-right" role="navigation">
@@ -51,7 +59,7 @@
               <ul class="site-menu js-clone-nav mr-auto d-none d-lg-block">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="listings.html">Ads</a></li>
-                <li class="has-children">
+                <li class="has-children active">
                   <a href="about.html">About</a>
                   <ul class="dropdown">
                     <li><a href="#">The Company</a></li>
@@ -63,7 +71,7 @@
                 <li><a href="blog.html">Blog</a></li>
                 <li><a href="contact.html">Contact</a></li>
 
-                <li class="ml-xl-3 login active"><a href="login.html"><span class="border-left pl-xl-4"></span>Log In</a></li>
+                <li class="ml-xl-3 login"><a href="login.html"><span class="border-left pl-xl-4"></span>Log In</a></li>
                 <li><a href="register.html">Register</a></li>
 
                 <li><a href="#" class="cta"><span class="bg-primary text-white rounded">+ Post an Ad</span></a></li>
@@ -80,8 +88,76 @@
       <!-- </div> -->
       
     </header>
+            <h2 class="text-center">These are the registered users</h2>
+    <p>
 
-  
+    <?php
+try {
+// This script retrieves all the records from the users table.                  
+require('mysqli_connect.php'); // Connect to the database.
+// Make the query:
+// Nothing passed from user safe query
+$query = "SELECT last_name, first_name, email, ";
+$query .= "DATE_FORMAT(registration_date, '%M %d, %Y')";
+$query .=
+        " AS regdat, userid FROM users ORDER BY registration_date ASC";
+// Prepared statement not needed since hardcoded
+$result = mysqli_query ($dbcon, $query); // Run the query.
+if ($result) { // If it ran OK, display the records.
+// Table header.                                                                
+echo '<table class="table table-striped">
+<tr>
+<th scope="col">Edit</th>
+<th scope="col">Delete</th>
+<th scope="col">Last Name</th>
+<th scope="col">First Name</th>
+<th scope="col">Email</th>
+<th scope="col">Date Registered</th>
+</tr>';
+// Fetch and print all the records:                                             
+while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
+               // Remove special characters that might already be in table to   
+               // reduce the chance of XSS exploits
+               $user_id = htmlspecialchars($row['userid'], ENT_QUOTES);
+               $last_name = htmlspecialchars($row['last_name'], ENT_QUOTES);
+               $first_name = htmlspecialchars($row['first_name'], ENT_QUOTES);
+               $email = htmlspecialchars($row['email'], ENT_QUOTES);
+               $registration_date = htmlspecialchars($row['regdat'], ENT_QUOTES);                                 
+               echo '<tr>
+                       <td><a href="edit_user.php?id=' . $user_id . '">Edit</a></td>
+                       <td><a href="delete_user.php?id=' . $user_id . '">Delete</a></td>’;                         
+               echo     '<td>' . $last_name . '</td>
+                       <td>' . $first_name . '</td>
+                       <td>' . $email . '</td>
+                       <td>' . $registration_date . '</td>
+               </tr>';
+        }
+        echo '</table>'; // Close the table.                                    
+        mysqli_free_result ($result); // Free up the resources.
+}
+else { // If it did not run OK.
+// Error message:
+echo
+'<p class="text-center">The current users could not be retrieved. ';
+echo 'We apologize for any inconvenience.</p>';
+// Debug message:
+// echo '<p>' . mysqli_error($dbcon) . '<br><br>Query: ' . $q . '</p>';
+exit;
+} // End of if ($result)
+mysqli_close($dbcon); // Close the database connection.
+}
+catch(Exception $e) // We finally handle any problems here
+{
+     // print "An Exception occurred. Message: " . $e->getMessage();
+     print "The system is busy please try later";
+}
+catch(Error $e)
+{
+      //print "An Error occurred. Message: " . $e->getMessage();
+      print "The system is busy please try again later.";
+         }
+?>
+</div>
     
     <div class="site-blocks-cover inner-page-cover overlay" style="background-image: url(images/hero_1.jpg);" data-aos="fade" data-stellar-background-ratio="0.5">
       <div class="container">
@@ -92,7 +168,8 @@
             
             <div class="row justify-content-center mt-5">
               <div class="col-md-8 text-center">
-                <h1>Log In</h1>
+                <h1>About Us</h1>
+                <p class="mb-0">A World Class Classified Company</p>
               </div>
             </div>
 
@@ -102,70 +179,7 @@
       </div>
     </div>  
 
-    <div class="site-section bg-light">
-      <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-md-7 mb-5"  data-aos="fade">
-
-            
-
-            <form action="#" class="p-5 bg-white">
-             
-              <div class="row form-group">
-                
-                <div class="col-md-12">
-                  <label class="text-black" for="email">Email</label> 
-                  <input type="email" id="email" class="form-control">
-                </div>
-              </div>
-
-              <div class="row form-group">
-                
-                <div class="col-md-12">
-                  <label class="text-black" for="subject">Password</label> 
-                  <input type="password" id="subject" class="form-control">
-                </div>
-              </div>
-
-              <div class="row form-group">
-                <div class="col-12">
-                  <p>No account yet? <a href="register.html">Register</a></p>
-                </div>
-              </div>
-
-            
-              <div class="row form-group">
-                <div class="col-md-12">
-                  <input type="submit" value="Sign In" class="btn btn-primary py-2 px-4 text-white">
-                </div>
-              </div>
-
-  
-            </form>
-          </div>
-          
-        </div>
-      </div>
-    </div>
-
     
-    <div class="newsletter bg-primary py-5">
-      <div class="container">
-        <div class="row align-items-center">
-          <div class="col-md-6">
-            <h2>Newsletter</h2>
-            <p>To receive our Yearly Newsletter please Subscribe.</p>
-          </div>
-          <div class="col-md-6">
-            
-            <form class="d-flex">
-              <input type="text" class="form-control" placeholder="Email">
-              <input type="submit" value="Subscribe" class="btn btn-white"> 
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
     
     
     <footer class="site-footer">
@@ -212,9 +226,10 @@
           <div class="col-md-12">
             <div class="border-top pt-5">
             <p>
-            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-            Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved                                                                                                       <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-               </p>
+            
+            Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved  <a href="#" target="_blank" ></a>
+            
+            </p>
             </div>
           </div>
           
@@ -240,3 +255,4 @@
     
   </body>
 </html>
+}
