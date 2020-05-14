@@ -146,7 +146,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 
                 <div class="col-md-12">
                   <label class="text-black" for="first_name">First Name*</label> 
-                  <input type="text" id="first_name" class="form-control" title="Alphabetic and space only max of 30 characters"
+                  <input type="text" id="first_name" class="form-control" maxlength="30" title="Alphabetic and space only max of 30 characters"
                   value= 
                          "<?php
                          if (isset($_POST['first_name'])) 
@@ -158,31 +158,145 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
               <div class="row form-group">
                 
                 <div class="col-md-12">
-                  <label class="text-black" for="last_name">Last Name</label> 
-                  <input type="text" id="last_name" class="form-control">
+                  <label class="text-black" for="last_name">Last Name*</label> 
+                  <input type="text" id="last_name" class="form-control" maxlength="40" required title="Alphabetic and space only max of 30 characters"
+                  value= 
+                         "<?php
+                         if (isset($_POST['last_name'])) 
+                           # code...
+                         echo htmlspecialchars($_POST['last_name'], ENT_QUOTES);
+                         ?>">
                 </div>
               </div>
               <div class="row form-group">
                 
                 <div class="col-md-12">
-                  <label class="text-black" for="email">Email</label> 
-                  <input type="email" id="email" class="form-control">
+                  <label class="text-black" for="email">Email*</label> 
+                  <input type="email" id="email" class="form-control" maxlength="60" required 
+                  value= 
+                         "<?php
+                         if (isset($_POST['email'])) 
+                           # code...
+                         echo htmlspecialchars($_POST['email'], ENT_QUOTES);
+                         ?>">
                 </div>
               </div>
 
               <div class="row form-group">
                 <div class="col-md-12">
                   <label class="text-black" for="subject">Password</label> 
-                  <input type="password" id="subject" class="form-control">
+                  <input type="password" id="subject" name="password1" class="form-control" title="One number, one uppercase letter, one lowercase letter, one special character, with 8-12 characters" minlength="8" maxlength="12"
+                  value= 
+                         "<?php
+                         if (isset($_POST['password1'])) 
+                           # code...
+                         echo htmlspecialchars($_POST['password1'], ENT_QUOTES);
+                         ?>">
+                         <span class="message" style="text-align:center">Between 8 - 12 chracters.</span>
                 </div>
               </div>
 
               <div class="row form-group">
                 <div class="col-md-12">
-                  <label class="text-black" for="subject">Re-type Password</label> 
-                  <input type="password" id="subject" class="form-control">
+                  <label class="text-black" for="subject">Re-type Password*</label> 
+                  <input type="password" id="subject" class="form-control" name="password2" minlength="8" maxlength="12" required 
+                  value= 
+                         "<?php
+                         if (isset($_POST['password2'])) 
+                           # code...
+                         echo htmlspecialchars($_POST['password2'], ENT_QUOTES);
+                         ?>">
                 </div>
               </div>
+              <div class="row form-group">
+                
+                <div class="col-md-12">
+                  <label class="text-black" for="address">Address*</label> 
+                  <input type="text" name="address1" id="address" class="form-control" maxlength="30" required 
+                  value= 
+                         "<?php
+                         if (isset($_POST['address1'])) 
+                           # code...
+                         echo htmlspecialchars($_POST['address1'], ENT_QUOTES);
+                         ?>">
+                </div>
+              </div>
+              <div class="row form-group">
+                
+                <div class="col-md-12">
+                  <label class="text-black" for="address2">Address 2</label> 
+                  <input type="text" id="address2"  name="address2" class="form-control" maxlength="30" required 
+                  value= 
+                         "<?php
+                         if (isset($_POST['address2'])) 
+                           # code...
+                         echo htmlspecialchars($_POST['address2'], ENT_QUOTES);
+                         ?>">
+                </div>
+              </div>
+              <div class="row form-group">
+                
+                <div class="col-md-12">
+                  <label class="text-black" for="city">City*</label> 
+                  <input type="city" id="city" name="city" class="form-control" maxlength="30" required 
+                  value= 
+                         "<?php
+                         if (isset($_POST['city'])) 
+                           # code...
+                         echo htmlspecialchars($_POST['city'], ENT_QUOTES);
+                         ?>">
+                </div>
+              </div>
+              <div class="row form-group">
+                
+                <div class="col-md-12">
+                  <label class="text-black" for="country">Country*</label> 
+                  <input type="text" id="state_country" name="state_country" class="form-control" maxlength="30" required 
+                  value= 
+                         "<?php
+                         if (isset($_POST['state_country'])) 
+                           # code...
+                         echo htmlspecialchars($_POST['state_country'], ENT_QUOTES);
+                         ?>">
+                </div>
+              </div>
+              <div class="row form-group">
+                
+                <div class="col-md-12">
+                  <label class="text-black" for="zcode_pcode">Zip/Postal Code*</label> 
+                  <input type="text" id="zcode_pcode" class="form-control" maxlength="30" required 
+                  value= 
+                         "<?php
+                         if (isset($_POST['zcode_pcode'])) 
+                           # code...
+                         echo htmlspecialchars($_POST['zcode_pcode'], ENT_QUOTES);
+                         ?>">
+                </div>
+              </div>
+              <div class="row form-group">
+                
+                <div class="col-md-12">
+                  <label class="text-black" for="telephone">Telephone Number*</label> 
+                  <input type="tel" id="phone" name="phone" class="form-control" maxlength="30" required 
+                  value= 
+                         "<?php
+                         if (isset($_POST['phone'])) 
+                           # code...
+                         echo htmlspecialchars($_POST['phone'], ENT_QUOTES);
+                         ?>">
+                </div>
+              </div>
+              <div class="row form-group">
+                
+                <div class="col-md-12">
+                  <label class="text-black" for=""></label> 
+                  <div class="col-md-12">
+                      <div class="float-left g-recaptcha"
+                      data-sitekey=""></div>
+                  </div>
+                </div>
+              </div>
+              
 
               <div class="row form-group">
                 <div class="col-12">
