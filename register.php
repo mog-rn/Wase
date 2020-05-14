@@ -1,3 +1,12 @@
+<?php
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+  # code...
+  require("cap.php");//recaptcha check
+}
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -112,16 +121,38 @@
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-md-7 mb-5"  data-aos="fade">
-
-            
-
-            <form action="" class="p-5 bg-white" method="post" onsubmit="return checked();">
+      <?php
+          if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            # code...
+            require('process-register-page.php');
+          }
+            ?>
+          <form action="register-page.php" class="p-5 bg-white" method="post" onsubmit="return checked();" name="regform" id="regform">
              
              <div class="row form-group">
                 
                 <div class="col-md-12">
-                  <label class="text-black" for="first_name">First Name</label> 
-                  <input type="text" id="first_name" class="form-control">
+                  <label class="text-black" for="first_name">Title</label> 
+                  <input type="text" id="first_name" class="form-control" placeholder="Mr, Mrs, Miss" maxlength="12" pattern='[a-zA-Z]'
+                  value="<?php if (isset($_POST['title'])) 
+                    # code...
+                    echo htmlspecialchars($_POST['first_name'], ENT_QUOTES);
+                    
+                  ?>">
+                </div>
+              </div>
+
+             <div class="row form-group">
+                
+                <div class="col-md-12">
+                  <label class="text-black" for="first_name">First Name*</label> 
+                  <input type="text" id="first_name" class="form-control" title="Alphabetic and space only max of 30 characters"
+                  value= 
+                         "<?php
+                         if (isset($_POST['first_name'])) 
+                           # code...
+                         echo htmlspecialchars($_POST['first_name'], ENT_QUOTES);
+                         ?>">
                 </div>
               </div>
               <div class="row form-group">
