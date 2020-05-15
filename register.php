@@ -121,6 +121,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
       <?php
           if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             # code...
+            
             require('process-register-page.php');
           }
             ?>
