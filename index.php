@@ -1,3 +1,15 @@
+<?php
+session_start();
+if (isset ($_SESSION['member_id'])) {
+  # code...
+  $menu = 1;
+}
+else {
+  # code...
+  $menu = 5;
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
