@@ -1,6 +1,6 @@
 <?php
 session_start();
-if (isset ($_SESSION['member_id'])) {
+if (isset ($_SESSION['user_id'])) {
   # code...
   $menu = 1;
 }
