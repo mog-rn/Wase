@@ -4,15 +4,8 @@ try {
         require ('connect.php'); // Connect to the database
         $errors = array(); // Initialize an error array.
         // --------------------check the entries-------------
-        //Is the title present? If it is, sanitize it                               #1
-        $title = filter_var( $_POST['title'], FILTER_SANITIZE_STRING);
-        if ((!empty($title)) && (preg_match('/[a-z\.\s]/i',$title)) &&
-                (strlen($title) <= 12)) {
-                //Sanitize the trimmed title
-                $titletrim = $title;
-        }else{
-                $titletrim = NULL; // Title is optional
-        }
+        //Is the title present? If it is, sanitize it                               
+        
         // Trim the first name
         $first_name =
                 filter_var( $_POST['first_name'], FILTER_SANITIZE_STRING);
@@ -42,7 +35,7 @@ try {
                         || (strlen($emailtrim > 60))) {
                 $errors[] = 'You forgot to enter your email address';
                 $errors[] = ' or the e-mail format is incorrect.';
-        }
+                }
         // Check for a password and match against the confirmed password:           #2
         $password1trim =
                 filter_var( $_POST['password1'], FILTER_SANITIZE_STRING);
@@ -84,7 +77,7 @@ $password1trim)) {
         if ((!empty($address2)) &&
                 (preg_match('/[a-z0-9\.\s\,\-]/i', $address2)) &&
                         (strlen($address2) <= 30)) {
-                //Sanitize the trimmed 2nd address
+                                //Sanitize the trimmed 2nd address
                 $address2trim = $address2;
         }else{
                 $address2trim = NULL;
@@ -123,33 +116,17 @@ $password1trim)) {
                 $errors[] =
 'Missing zip code or post code. Alpha, numeric, space only max 30 characters';
         }
-        //Is the secret present? If it is, sanitize it
-        $secret = filter_var( $_POST['secret'], FILTER_SANITIZE_STRING);
-        if ((!empty($secret)) && (preg_match('/[a-z\.\s\,\-]/i', $secret)) &&
-                (strlen($secret) <= 30)) {
-                //Sanitize the trimmed city
-                $secrettrim = $secret;
-        }else{
-                $errors[] =
-'Missing city. Only alphabetic, period, comma, dash and space. Max 30.';
-        }
+        
         //Is the phone number present? If it is, sanitize it
         $phone = filter_var( $_POST['phone'], FILTER_SANITIZE_STRING);
         if ((!empty($phone)) && (strlen($phone) <= 30)) {
                 //Sanitize the trimmed phone number
                 $phonetrim = (filter_var($phone, FILTER_SANITIZE_NUMBER_INT));
-                $phonetrim = preg_replace('/[^0-9]/', ", $phonetrim);
+                $phonetrim = preg_replace('/[^0-9]/', ", $phonetrim");
         }else{
                 $phonetrim = NULL;
         }
-        //Is the class present? If it is, sanitize it
-        $class = filter_var( $_POST['level'], FILTER_SANITIZE_STRING);
-        if ((!empty($class)) && (strlen($class) <= 3)) {
-                //Sanitize the trimmed phone number
-                $classtrim = (filter_var($class, FILTER_SANITIZE_NUMBER_INT));
-        }else{
-                $errors[] = 'Missing Level Selection.';
-        }
+        
         if (empty($errors)) { // If everything's OK.
                 // If no problems encountered, register user in the database
                 //Determine whether the email address has already been registered

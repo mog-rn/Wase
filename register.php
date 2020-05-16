@@ -92,7 +92,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
       <!-- </div> -->
       
     </header>
-
+<?php
+          if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            # code...
+            
+            require('process-register-page.php');
+          }
+            ?>
   
     
     <div class="site-blocks-cover inner-page-cover overlay" style="background-image: url(images/hero_1.jpg);" data-aos="fade" data-stellar-background-ratio="0.5">
@@ -105,6 +111,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <div class="row justify-content-center mt-5">
               <div class="col-md-8 text-center">
                 <h1>Register</h1>
+                
               </div>
             </div>
 
@@ -113,28 +120,24 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         </div>
       </div>
     </div>  
-
+<h3 class="text-center">Items marked with an asterick * are required</h3>
     <div class="site-section bg-light">
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-md-7 mb-5"  data-aos="fade">
       <?php
-          if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-            # code...
-            
-            require('process-register-page.php');
-          }
-            ?>
+        
+      ?>
           <form action="register-page.php" class="p-5 bg-white" method="post" onsubmit="return checked();" name="regform" id="regform">
              
              <div class="row form-group">
                 
                 <div class="col-md-12">
-                  <label class="text-black" for="first_name">Title</label> 
-                  <input type="text" id="first_name" class="form-control" placeholder="Mr, Mrs, Miss" maxlength="12" pattern='[a-zA-Z]'
+                  <label class="text-black" for="title">Title</label> 
+                  <input type="text" id="title" class="form-control" placeholder="Mr, Mrs, Miss" maxlength="3" pattern='[]'
                   value="<?php if (isset($_POST['title'])) 
                     # code...
-                    echo htmlspecialchars($_POST['first_name'], ENT_QUOTES);
+                    echo htmlspecialchars($_POST['title'], ENT_QUOTES);
                     
                   ?>">
                 </div>
