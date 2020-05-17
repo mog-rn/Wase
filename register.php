@@ -130,18 +130,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
       ?>
           <form action="register-page.php" class="p-5 bg-white" method="post" onsubmit="return checked();" name="regform" id="regform">
              
-             <div class="row form-group">
-                
-                <div class="col-md-12">
-                  <label class="text-black" for="title">Title</label> 
-                  <input type="text" id="title" class="form-control" placeholder="Mr, Mrs, Miss" maxlength="3" pattern='[]'
-                  value="<?php if (isset($_POST['title'])) 
-                    # code...
-                    echo htmlspecialchars($_POST['title'], ENT_QUOTES);
-                    
-                  ?>">
-                </div>
-              </div>
+             
 
              <div class="row form-group">
                 
