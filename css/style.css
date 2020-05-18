@@ -12,7 +12,9 @@ body {
 ::selection {
   background: #000;
   color: #fff; }
-
+.message {
+  -webkit-text-fill-color: red
+}
 a {
   -webkit-transition: .3s all ease;
   -o-transition: .3s all ease;
@@ -1117,7 +1119,7 @@ h1, h2, h3, h4, h5,
 
 #date-countdown .label {
   font-size: 40px;
-  color: #000; }
+  color: rgb(40, 211, 69); }
 
 .next-match .image {
   width: 50px;

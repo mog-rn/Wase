@@ -1,6 +1,19 @@
+<?php
+session_start();
+if (isset ($_SESSION['user_id'])) {
+  # code...
+  $menu = 1;
+}
+else {
+  # code...
+  $menu = 5;
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <link rel="icon" href="images/wasify.png" sizes="32x32" type="image/png" style="border-radius:45px;">
     <title>WASIFYAds</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -299,7 +312,7 @@
                     <span class="icon-star text-warning"></span>
                     <span class="icon-star text-warning"></span>
                     <span class="icon-star text-secondary"></span>
-                    <span class="review">(3 Reviews)</span>
+                    <span class="review">(0 Reviews)</span>
                   </p>
                 </div>
               </div>
@@ -317,7 +330,7 @@
                     <span class="icon-star text-warning"></span>
                     <span class="icon-star text-warning"></span>
                     <span class="icon-star text-secondary"></span>
-                    <span class="review">(3 Reviews)</span>
+                    <span class="review">(0 Reviews)</span>
                   </p>
                 </div>
               </div>
@@ -335,7 +348,7 @@
                     <span class="icon-star text-warning"></span>
                     <span class="icon-star text-warning"></span>
                     <span class="icon-star text-secondary"></span>
-                    <span class="review">(3 Reviews)</span>
+                    <span class="review">(0 Reviews)</span>
                   </p>
                 </div>
               </div>
@@ -464,7 +477,7 @@
                   <span class="icon-star text-warning"></span>
                   <span class="icon-star text-warning"></span>
                   <span class="icon-star text-secondary"></span>
-                  <span class="review">(3 Reviews)</span>
+                  <span class="review">(0 Reviews)</span>
                 </p>
               </div>
             </div>
@@ -481,7 +494,7 @@
                     <span class="icon-star text-warning"></span>
                     <span class="icon-star text-warning"></span>
                     <span class="icon-star text-secondary"></span>
-                    <span class="review">(3 Reviews)</span>
+                    <span class="review">(0 Reviews)</span>
                   </p>
                 </div>
               </div>
@@ -499,7 +512,7 @@
                     <span class="icon-star text-warning"></span>
                     <span class="icon-star text-warning"></span>
                     <span class="icon-star text-secondary"></span>
-                    <span class="review">(3 Reviews)</span>
+                    <span class="review">(0 Reviews)</span>
                   </p>
                 </div>
               </div>
@@ -522,7 +535,7 @@
                   <span class="icon-star text-warning"></span>
                   <span class="icon-star text-warning"></span>
                   <span class="icon-star text-secondary"></span>
-                  <span class="review">(3 Reviews)</span>
+                  <span class="review">(0 Reviews)</span>
                 </p>
               </div>
             </div>
@@ -540,7 +553,7 @@
                   <span class="icon-star text-warning"></span>
                   <span class="icon-star text-warning"></span>
                   <span class="icon-star text-secondary"></span>
-                  <span class="review">(3 Reviews)</span>
+                  <span class="review">(0 Reviews)</span>
                 </p>
               </div>
             </div>
@@ -557,7 +570,7 @@
                     <span class="icon-star text-warning"></span>
                     <span class="icon-star text-warning"></span>
                     <span class="icon-star text-secondary"></span>
-                    <span class="review">(3 Reviews)</span>
+                    <span class="review">(0 Reviews)</span>
                   </p>
                 </div>
               </div>
