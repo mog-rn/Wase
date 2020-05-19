@@ -3,7 +3,12 @@ const jwt = require("jsonwebtoken");
 const bcrypt = require("bcryptjs");
 
 const UserSchema = new mongoose.Schema({
-	name: {
+	first_name: {
+		type: String,
+		required: [true, "Please provide a name"],
+		trim: true,
+	},
+	last_name: {
 		type: String,
 		required: [true, "Please provide a name"],
 		trim: true,
@@ -26,6 +31,36 @@ const UserSchema = new mongoose.Schema({
 		type: String,
 		required: [true, "Please add a password"],
 		minlength: 6,
+		select: false,
+	},
+	Address: {
+		type: String,
+		required: [true, "Provide a valid address"],
+		minlength: 6,
+		select: false,
+	},
+	City: {
+		type: String,
+		required: [true, "Your city of residence"],
+		minlength: 3,
+		select: false,
+	},
+	Country: {
+		type: String,
+		required: [true, "Country"],
+		minlength: 6,
+		select: false,
+	},
+	Zip_PostalCode: {
+		type: String,
+		required: [true, "Zip/Postal Code"],
+		minlength: 9,
+		select: false,
+	},
+	phone: {
+		type: String,
+		required: [true, "Telephone Number"],
+		minlength: 10,
 		select: false,
 	},
 	createdAt: {
