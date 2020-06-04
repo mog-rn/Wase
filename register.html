@@ -23,8 +23,18 @@
     <link rel="stylesheet" href="css/rangeslider.css">
 
     <link rel="stylesheet" href="css/style.css">
-    
+  <!--Authentication-->
+  <script src="auth/models/User.js"></script> 
+  <script>
+    axios
+        .get("auth/models/User.js")
+        .then(response => {
+          console.log(response.data);
+        })
+        .catch(error => console.error(error));
+  </script> 
   </head>
+  
   <body>
   <!--Validate the input-->
        
@@ -110,7 +120,7 @@
         <div class="row justify-content-center">
           <div class="col-md-7 mb-5"  data-aos="fade">
       
-          <form action="register-page.php" class="p-5 bg-white" method="post" onsubmit="return checked();" name="regform" id="regform">
+          <form action="" class="p-5 bg-white" method="post" onsubmit="return checked();" name="regform" id="regform">
              
              
 
@@ -324,6 +334,15 @@
   <script src="js/aos.js"></script>
   <script src="js/rangeslider.min.js"></script>
 
+
+  <!--Authentification-->
+  <script src="auth/config/db.js"></script>
+  <script src="auth/controllers/auth.js"></script>
+  <script src="auth/middleware/async.js"></script>
+  <script src="auth/middleware/error.js"></script>
+  <script src="auth/models/User.js"></script>
+  <script src="auth/routes/auth.js"></script>
+  <script src="auth/utils/errorResponse.js"></script>
   <script src="js/main.js"></script>
     
   </body>
