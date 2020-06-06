@@ -1,5 +1,5 @@
 {
-    "eslint.enable": true,
-    "standard.enable": true,
-    "tslint.enable": true
+    "eslint.enable": false,
+    "standard.enable": false,
+    "tslint.enable": false
 }
