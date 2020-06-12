@@ -1,5 +1,8 @@
 {
     "eslint.enable": false,
     "standard.enable": false,
-    "tslint.enable": false
+    "tslint.enable": false,
+    "vscode-janus-debug.uploadOnSave": [
+        "server"
+    ]
 }

@@ -21,7 +21,7 @@ app.use(cookieParser());
 
 // Dev logging middleware
 if (process.env.NODE_ENV === "development") {
-	app.use(morgan("dev"));
+    app.use(morgan("dev"));
 }
 
 // mount routes
@@ -31,8 +31,8 @@ app.use(errorHandler);
 
 const PORT = process.env.PORT || 5000;
 app.listen(
-	PORT,
-	console.log(
-		`Serever listening on port ${PORT} on ${process.env.NODE_ENV}`.yellow.bold
-	)
+    PORT,
+    console.log(
+        `Server listening on port ${PORT} on ${process.env.NODE_ENV}`.yellow.bold
+    )
 );

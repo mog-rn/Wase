@@ -7,6 +7,7 @@ create a backend for an information website that takes in data from farmers and 
 - Search by
 
   - ##### Area namen -> location
+
     - implement Geolocation
     - Display search results => pagination, lazy-loading
   - ##### time of the year
