@@ -4,5 +4,9 @@
     "tslint.enable": false,
     "vscode-janus-debug.uploadOnSave": [
         "app"
+    ],
+    "vscode-janus-debug.uploadManually": [
+        "wasify",
+        "Account"
     ]
 }
