@@ -19,7 +19,7 @@
 			"currentConfiguration": true,
 			"stopOnEntry": true,
 			"log": {
-				"fileName": "${workspaceRoot}/vscode-janus-debug-launch.log",
+				"fileName": "$/home/gituser/Desktop/Wasify/wasifyads/vscode-janus-debug-launch.log",
 				"logLevel": {
 					"default": "Debug"
 				}
@@ -37,7 +37,7 @@
 			"host": "localhost",
 			"debuggerPort": 8089,
 			"log": {
-				"fileName": "${workspaceRoot}/vscode-janus-debug-attach.log",
+				"fileName": "$/home/gituser/Desktop/Wasify/wasifyads/vscode-janus-debug-attach.log",
 				"logLevel": {
 					"default": "Debug"
 				}
