@@ -1,6 +1,6 @@
 # Agricultural information Backedn Api
 
-create a backend for an information website that takes in data from farmers and responds with information based on the farmers request
+create a backend for an information website that takes in data from clients and responds with information based on the clients request
 
 ### SEARCH FUNCTIONALITY
 

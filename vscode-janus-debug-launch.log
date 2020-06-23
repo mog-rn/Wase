@@ -1,5 +1,0 @@
-INFO |00000.747|JanusDebugSession: launchRequest
-DEBUG|00000.747|JanusDebugSession: my workspace: /home/gituser/Desktop/Wasify/wasifyads
-DEBUG|00000.764|DebugAdapterIPC: connect to VS Code extension (sock6019)
-DEBUG|00000.769|DebugAdapterIPC: connected to VS Code extension
-INFO |00000.806|JanusDebugSession: disconnectRequest
