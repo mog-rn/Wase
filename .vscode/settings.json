@@ -12,6 +12,7 @@
         "routes",
         "auth",
         "reg",
-        "login"
+        "login",
+        "server"
     ]
 }
