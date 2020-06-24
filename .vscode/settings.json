@@ -3,7 +3,8 @@
     "standard.enable": false,
     "tslint.enable": false,
     "vscode-janus-debug.uploadOnSave": [
-        "app"
+        "app",
+        "User"
     ],
     "vscode-janus-debug.uploadManually": [
         "wasify",
@@ -11,6 +12,7 @@
         "routes",
         "auth",
         "reg",
-        "login"
+        "login",
+        "server"
     ]
 }

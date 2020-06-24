@@ -11,13 +11,13 @@ const users = require("./routes/auth");
 
 const app = express();
 
-app.use("/auth", users);
+app.use("./auth", users);
 
 PORT = process.env.PORT;
 
 app.listen(
-	PORT,
-	console.log(
-		`server running on port ${PORT} in ${process.env.NODE_ENV} mode`.yellow.bold
-	)
+    PORT,
+    console.log(
+        `server running on port ${PORT} in ${process.env.NODE_ENV} mode`.yellow.bold
+    )
 );
